@@ -1,34 +1,42 @@
-<nav class="navbar navbar-light bg-light">
-    <div class="btn-group">
-        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Categorias
-        </button>
-    <div class="dropdown-menu">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-        <a class="dropdown-item" href="index.php">Todas</a>
+ <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+          
+                    
+           <div class="collapse navbar-collapse" id="navbarNavDropdown">
 
-        <?php
-            $conexion = new mysqli("localhost", "root", "", "quickas");
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Categorias
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-            $sql = "SELECT * FROM categorias ORDER BY cat_nombre";
+                  <a class="dropdown-item" href="index.php">Todas</a>
 
-            $categorias = $conexion->query($sql);
+                  <?php
+                    $conexion = new mysqli("localhost", "root", "", "quickas");
+                    $sql = "SELECT * FROM categorias ORDER BY cat_nombre";
+                    $categorias = $conexion->query($sql);
+                    foreach ($categorias as $categoria) {
+                  ?>
+                    <a class="dropdown-item" href="index.php?cat_id=<?=$categoria['cat_id']?>"><?=$categoria["cat_nombre"]?></a>
+                  <?php
+                    }
+                  ?>
 
-            foreach ($categorias as $categoria){
-        ?>
 
-        <a class="dropdown-item" href="index.php?cat_id= <?=$categoria["cat_id"]?>"> <?=$categoria ["cat_nombre"]?> </a>
-    </div>
+                </div>
+              </li>
+            </ul>
 
-    <?php
-        } 
-    ?>
 
-    <div class="btn-group">
-        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Carrito
-        </button>
-        <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action</a>
-        </div>
-</nav>
+            
+            </div>
+
+
+
+              
+      </nav>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-10-2019 a las 17:01:00
+-- Tiempo de generación: 08-10-2019 a las 21:28:57
 -- Versión del servidor: 10.4.6-MariaDB
 -- Versión de PHP: 7.3.9
 
@@ -38,7 +38,7 @@ CREATE TABLE `categorias` (
 --
 
 INSERT INTO `categorias` (`cat_id`, `cat_nombre`) VALUES
-(1, 'Lácteos'),
+(1, 'Lacteos'),
 (2, 'Vegetales'),
 (3, 'Harinas'),
 (4, 'Vinos'),
@@ -93,9 +93,14 @@ CREATE TABLE `publicaciones` (
 --
 
 INSERT INTO `publicaciones` (`pub_id`, `pub_titulo`, `pub_descripcion`, `pub_imagen`, `pub_precio`, `cat_id`, `usr_id`) VALUES
-(1, 'Manteca Sancor 500g', 'Manteca marca Sancor de 500g', 'manteca_sancor.png', '70', 1, 1),
-(2, 'Bananas africanas 1kg', '1kg de bananas africanas maduras.', 'banana.jpg', '26', 2, 2),
-(3, 'Mandarinas 1KG', '1KG de mandarinas frescas', 'mandarina.jpg', '30', 8, 3);
+(1, 'Manteca Sancor 500g', 'Manteca marca Sancor de 200g', 'manteca.jpg', '70', 1, 1),
+(2, 'Bananas 1Kg', '1kg de bananas.', 'banana.jpg', '26', 2, 2),
+(3, 'Mandarinas 1Kg', '1KG de mandarinas frescas', 'mandarina.jpg', '30', 8, 3),
+(4, 'Harina \"0000\" 1Kg', 'Harina refinada \"0000\" marca Blancaflor 1Kg', 'harina.jpg', '62', 3, 3),
+(5, 'Vino Toro', 'Vino marca Toro', 'vino.jpg', '40', 4, 3),
+(6, 'Manaos de uva 2.25L', 'Nueva Manaos sabor uva de 2.25L', 'manaos_uva.png', '50', 6, 3),
+(7, 'Papas fritas Lays 250g', 'Papas fritas sabor original marca Lays 250g', 'lays.jpg', '45', 7, 3),
+(8, 'Aceite de Oliva Cocinero 500ml', 'Aceite de oliva marca Cocinero de 500ml', 'aceite.jpg', '130', 14, 3);
 
 -- --------------------------------------------------------
 
@@ -116,9 +121,9 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`usr_id`, `usr_nombre`, `usr_nick`, `usr_password`, `usr_email`) VALUES
-(1, 'Emmanuel', 'DanteZak', '4444', ''),
-(2, 'Nicolas', 'Venom', '0000', ''),
-(3, 'Universo', 'Super Universo', '1234', 'universo@gmail.com');
+(1, 'Emmanuel', 'DanteZak', '4444', 'emma@gmail.com'),
+(2, 'Nicolas', 'Venom', '0000', 'nico@outlook.com'),
+(3, 'Universo', 'Super Universo', '12345', 'universo@gmail.com');
 
 --
 -- Índices para tablas volcadas
@@ -165,7 +170,7 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de la tabla `publicaciones`
 --
 ALTER TABLE `publicaciones`
-  MODIFY `pub_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `pub_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`

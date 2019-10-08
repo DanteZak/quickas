@@ -1,18 +1,17 @@
 <?php
-    session_start(); //SIEMPRE PRIMERO
 
-    if (isset($GET_"nombre") && isset($GET_["contraseña"])) {
+    if (isset($GET_["nombre"]) && isset($GET_["contraseña"])) {
         //Verifica que existe el usuario
 
-        $conexion = new mysqli("localhost", "root", "", "quickservice");
+        $conexion = new mysqli("localhost", "root", "", "quickas");
 
         $sql = "SELECT * FROM usuarios WHERE usr_nick = '" . $GET_["nombre"] . "' AND usr_password '" . $GET_["password"];
 
         $resultado = $conexion->query($sql);
 
         if( $resultado->num_rows == 1){
-            $_SESION["usuario"]  $_GET["nombre"];
-            $_SESION["usr_nombre"]  $_GET["usr_nombre"];
+            $_GET["nombre"];
+            $_GET["usr_nombre"];
 
             header ("Location: index.php?m=home");
         }
@@ -28,14 +27,14 @@
     <div class="form-row">
         <div class="col-md-4 mb-3">
         <label for="validationTooltip01">Nombre</label>
-        <input type="text" class="form-control" id="validationTooltip01" placeholder="Nombre" value="Mark" required>
+        <input type="text" class="form-control" id="validationTooltip01" placeholder="Nombre" value="" required>
         <div class="valid-tooltip">
             Looks good!
         </div>
         </div>
         <div class="col-md-4 mb-3">
         <label for="validationTooltip02">Apellido</label>
-        <input type="text" class="form-control" id="validationTooltip02" placeholder="Apellido" value="Otto" required>
+        <input type="text" class="form-control" id="validationTooltip02" placeholder="Apellido" value="" required>
         <div class="valid-tooltip">
             Looks good!
         </div>

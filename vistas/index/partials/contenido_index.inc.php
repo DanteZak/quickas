@@ -75,7 +75,19 @@
             <h5 class="card-title"><?=  $publicacion["pub_titulo"] ?></h5>
             <p class="card-text"><?=  $publicacion["pub_descripcion"] ?></p>
             <p class="card-text"><small class="text-muted">$ <?=  $publicacion["pub_precio"] ?></small></p>
-            <a href="index.php?m=agregar_carrito?pub_id&<?= $articulo ["pub_id"]?>" class="btn btn-success">Añadir al carrito</a>
+
+
+          <form action="" method="post">
+          
+            <button class="btn btn-success"
+            name="btnAccion"
+            value="agregar"
+            type="sumbit">
+              Añadir al carrito
+            </button>
+
+          </form>
+
           </div>
         </div>
       </div>

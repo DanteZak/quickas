@@ -98,23 +98,6 @@
       <a href="index.php?m=registro">Registrate</a>
       </p>
 
-      <p>o registrate usando:</p>
-
-      <div class="Flat-social-icons">
-			<div class="inner-content">
-				<div class="icons-section">
-				<div class="left-icons">
-					 <div class="fb"><a href="#"><span> </span> <lable>Facebook</lable>
-						 <div class="clear"></div></a>
-					</div>
-					<div class="twitter"><a href="#"><span> </span> <lable>Twitter</lable>
-						 <div class="clear"></div></a>
-					</div>
-				<div class="clear"></div>
-			</div>
-		</div>
-  </div>
-  
     </div>
 
     <input class="btn btn-danger" type="submit" value="Ingresar">
