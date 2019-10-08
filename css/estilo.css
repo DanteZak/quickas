@@ -1,0 +1,43 @@
+.card-block {
+    padding: 30px;
+}
+
+.fondo-verde {
+    background-color: green;
+}
+
+.fondo-rojo { 
+    background-color: red
+}
+
+.borderline-red {
+    border-inline-color: red;
+}
+
+#publicar-posicion {
+    margin-top: 100px;
+    margin-left: 100px;
+}
+
+.tamaño-tarjetas{
+    width: 250px;
+    height: 250px;
+    display:block;
+    margin:auto;
+}
+
+.float{
+    float: auto;
+}
+
+#margencito{
+    padding: 10px;
+}
+
+#padding-izq{
+    padding-left: 20px;
+}
+
+.centrar {
+    align: center;
+}
