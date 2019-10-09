@@ -50,11 +50,11 @@
   $sql = "SELECT * FROM publicaciones";
 
   if( isset($_GET["cat_id"])){
-    $sql .= "WHERE cat_id =" . $_GET["cat_id"];
+    $sql .= " WHERE cat_id =" . $_GET["cat_id"];
   }
   else
     if( isset( $_GET["busqueda"])){
-      $sql .= "WHERE pub_titulo LIKE '%" . $_GET["busqueda"] . "%'";
+      $sql .= " WHERE pub_titulo LIKE '%" . $_GET["busqueda"] . "%'";
     }
 
   $publicaciones = $conexion->query($sql);
