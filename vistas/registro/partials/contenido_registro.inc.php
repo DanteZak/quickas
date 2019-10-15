@@ -31,6 +31,8 @@
 
                     <form class="mt-4" action="index.php">
 
+                      <input type="hidden" name="m" value="registro">
+
                         <input type="text" class="form-control" placeholder="Nombre" name=nombre>
                         <input type="email" class="form-control mt-2" placeholder="Email" name=email>
                         <input type="password" class="form-control mt-2" placeholder="Contraseña" name=password>

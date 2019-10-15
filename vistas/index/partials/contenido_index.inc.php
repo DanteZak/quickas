@@ -82,7 +82,7 @@
             <button class="btn btn-success"
             name="btnAccion"
             value="agregar"
-            type="sumbit">
+            type="sumbit"><a href="vistas/carrito/index.php">
               Añadir al carrito
             </button>
 
@@ -108,7 +108,7 @@
           <h5 class="card-title"><?=  $publicacion["pub_titulo"] ?></h5>
           <p class="card-text"><?=  $publicacion["pub_descripcion"] ?></p>
           <p class="card-text"><small class="text-muted">$ <?=  $publicacion["pub_precio"] ?></small></p>
-          <a href="#" class="btn btn-success">Añadir al carrito</a>
+          <a href="vistas/carrito/index.php" class="btn btn-success">Añadir al carrito</a>
         </div>
       </div>
 
