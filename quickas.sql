@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-10-2019 a las 21:28:57
+-- Tiempo de generación: 16-10-2019 a las 12:03:15
 -- Versión del servidor: 10.4.6-MariaDB
 -- Versión de PHP: 7.3.9
 
@@ -21,6 +21,31 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `quickas`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `cart`
+--
+
+CREATE TABLE `cart` (
+  `pub_id` int(11) NOT NULL,
+  `email_client` varchar(255) DEFAULT NULL,
+  `reated_at` datetime(6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `cart_product`
+--
+
+CREATE TABLE `cart_product` (
+  `pub_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `q` float DEFAULT NULL,
+  `cart_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -111,7 +136,6 @@ INSERT INTO `publicaciones` (`pub_id`, `pub_titulo`, `pub_descripcion`, `pub_ima
 CREATE TABLE `usuarios` (
   `usr_id` int(11) NOT NULL,
   `usr_nombre` varchar(30) NOT NULL,
-  `usr_nick` varchar(20) NOT NULL,
   `usr_password` varchar(12) NOT NULL,
   `usr_email` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -120,14 +144,26 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`usr_id`, `usr_nombre`, `usr_nick`, `usr_password`, `usr_email`) VALUES
-(1, 'Emmanuel', 'DanteZak', '4444', 'emma@gmail.com'),
-(2, 'Nicolas', 'Venom', '0000', 'nico@outlook.com'),
-(3, 'Universo', 'Super Universo', '12345', 'universo@gmail.com');
+INSERT INTO `usuarios` (`usr_id`, `usr_nombre`, `usr_password`, `usr_email`) VALUES
+(1, 'Emmanuel', '4444', 'emma@gmail.com'),
+(2, 'Nicolas', '0000', 'nico@outlook.com'),
+(3, 'Universo', '12345', 'universo@gmail.com');
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`pub_id`);
+
+--
+-- Indices de la tabla `cart_product`
+--
+ALTER TABLE `cart_product`
+  ADD PRIMARY KEY (`pub_id`);
 
 --
 -- Indices de la tabla `categorias`
@@ -154,11 +190,23 @@ ALTER TABLE `publicaciones`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`usr_id`),
-  ADD UNIQUE KEY `usr_nick` (`usr_nick`,`usr_email`);
+  ADD KEY `usr_nick` (`usr_email`) USING BTREE;
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `pub_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `cart_product`
+--
+ALTER TABLE `cart_product`
+  MODIFY `pub_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `categorias`
@@ -176,7 +224,7 @@ ALTER TABLE `publicaciones`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `usr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `usr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas
